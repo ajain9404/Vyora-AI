@@ -63,7 +63,7 @@ The application provides an interactive conversational experience with persisten
 ## 💬 AI Chat
 
 <p align="center">
-  <img src="screenshots/dashboard-ai-chat.png" width="90%">
+  <img src="frscreenshots/dashboard-ai-chat.png" width="90%">
 </p>
 
 ---
@@ -71,7 +71,7 @@ The application provides an interactive conversational experience with persisten
 ## 🗂️ Thinking Response
 
 <p align="center">
-  <img src="screenshots/ai-thinking-response.png" width="90%">
+  <img src="Vyora-AI\Frontend\src\screenshots\ai-formula-response.png" width="90%">
 </p>
 
 ---
