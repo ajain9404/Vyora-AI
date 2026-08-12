@@ -104,7 +104,7 @@ The application provides an interactive conversational experience with persisten
 ## 📱 Responsive Design
 
 <p align="center">
-  <img src="\Frontend\src\screenshots\Mobile Responsive.png" width="45%">
+  <img src="\Frontend\src\screenshots\Mobile Responsive.png" width="90%">
 </p>
 
 ---
