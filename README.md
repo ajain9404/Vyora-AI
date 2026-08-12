@@ -52,26 +52,51 @@ The application provides an interactive conversational experience with persisten
 
 # 📸 Screenshots
 
+## 🏠 Landing Page
+
+<p align="center">
+  <img src="\Frontend\src\screenshots\Landing Page.png" width="90%">
+</p>
+
+---
+
+## 🏠 Login
+
+<p align="center">
+  <img src="\Frontend\src\screenshots\Login Page.png" width="90%">
+</p>
+
+## 🏠 Sign Up 
+
+<p align="center">
+  <img src="\Frontend\src\screenshots\Sign Up.png" width="90%">
+</p>
+
 ## 🏠 Dashboard
 
 <p align="center">
-  <img src="screenshots/dashboard.png" width="90%">
+  <img src="\Frontend\src\screenshots\dashboard.png" width="90%">
+</p>
+
+## 💬 AI Chat Response
+
+<p align="center">
+  <img src="\Frontend\src\screenshots\dashboard-ai-chat.png" width="90%">
 </p>
 
 ---
 
-## 💬 AI Chat
+## 💬 AI Thinking Response
 
 <p align="center">
-  <img src="frscreenshots/dashboard-ai-chat.png" width="90%">
+  <img src="\Frontend\src\screenshots\ai-thinking-response.png" width="90%">
 </p>
 
 ---
-
-## 🗂️ Thinking Response
+## 🗂️ Mathematical Formula Response
 
 <p align="center">
-  <img src="Vyora-AI\Frontend\src\screenshots\ai-formula-response.png" width="90%">
+  <img src="\Frontend\src\screenshots\ai-formula-response.png" width="90%">
 </p>
 
 ---
@@ -79,7 +104,7 @@ The application provides an interactive conversational experience with persisten
 ## 📱 Responsive Design
 
 <p align="center">
-  <img src="screenshots/Mobile Responsive.png" width="45%">
+  <img src="\Frontend\src\screenshots\Mobile Responsive.png" width="45%">
 </p>
 
 ---
