@@ -1,0 +1,528 @@
+/* ===========================
+        Chat Container
+=========================== */
+
+.chats {
+    flex: 1;
+
+    width: 88%;
+    max-width: 1000px;
+
+    box-sizing: border-box;
+
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    padding: 30px 0 150px;
+
+    margin: 0 auto;
+}
+
+/* scrollbar */
+
+.chats::-webkit-scrollbar{
+
+    width:6px;
+}
+
+.chats::-webkit-scrollbar-thumb{
+
+    background:#444;
+
+    border-radius:20px;
+}
+
+
+/* ===========================
+        User Message
+=========================== */
+
+.userDiv{
+
+    display:flex;
+
+    justify-content:flex-end;
+
+    margin:20px 0;
+
+    animation:fadeUp .3s ease;
+}
+
+.userMessage{
+
+    background:linear-gradient(
+        135deg,
+        #7C3AED,
+        #6D28D9
+    );
+
+    color:white;
+
+    padding:16px 22px;
+
+    border-radius:22px 22px 6px 22px;
+
+    max-width:75%;
+
+    font-size:15px;
+
+    line-height:1.7;
+
+    box-shadow:
+    0 10px 25px rgba(124,58,237,.25);
+}
+
+
+/* ===========================
+        AI Message
+=========================== */
+
+.gptDiv {
+    display: flex;
+
+    flex-direction: column;
+    align-items: flex-start;
+
+    gap: 12px;
+
+    width: 100%;
+    box-sizing: border-box;
+
+    margin: 24px 0;
+    padding: 22px;
+
+    border-radius: 22px;
+
+    background: rgba(255,255,255,.04);
+
+    border: 1px solid rgba(255,255,255,.06);
+
+    backdrop-filter: blur(16px);
+
+    animation: fadeUp .3s ease;
+}
+
+.gptDiv p{
+
+    margin:0;
+
+    line-height:1.8;
+
+    color:#F8FAFC;
+}
+
+.gptDiv h1,
+.gptDiv h2,
+.gptDiv h3{
+
+    margin-top:18px;
+}
+
+.gptDiv ul{
+
+    padding-left:20px;
+}
+
+.gptDiv li{
+
+    margin:6px 0;
+}
+
+
+/* ===========================
+        Code Blocks
+=========================== */
+
+pre{
+
+    width:100%;
+
+    overflow:auto;
+
+    border-radius:18px;
+
+    margin:18px 0 !important;
+}
+
+.hljs{
+
+    border-radius:18px !important;
+
+    padding:18px !important;
+
+    font-size:14px;
+}
+
+code{
+
+    border-radius:8px;
+}
+
+
+/* ===========================
+        Welcome Screen
+=========================== */
+
+.welcome {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+
+    text-align: center;
+
+    margin-top: -35px;
+    padding-bottom: 40px;
+}
+
+.welcomeLogo {
+    width: 68px;
+    height: 68px;
+
+    margin-bottom: 10px;
+
+    border-radius: 22px;
+
+    box-shadow: 0 20px 50px rgba(124,58,237,.35);
+}
+
+.welcome h1 {
+    font-size: 60px;
+    font-weight: 800;
+    margin: 6px 0;
+}
+
+.brand{
+
+    color:#8B5CF6;
+}
+
+.welcome-subtitle {
+    margin: 0px 0 25px;
+    color: #94A3B8;
+    font-size: 18px;
+}
+
+/* ===========================
+        Suggestion Cards
+=========================== */
+
+.suggestionGrid{
+    display:grid;
+
+    grid-template-columns:repeat(2, 200px);
+
+    gap:26px;
+
+    margin-top:0px;
+    margin-bottom:20px;
+}
+
+.suggestionCard {
+
+    padding: 0px;
+
+    border-radius: 19px;
+
+    background: rgba(255,255,255,.05);
+
+    border: 1px solid rgba(240, 6, 201, 0.08);
+
+    cursor: pointer;
+
+    transition: .3s ease;
+
+    min-height: 120px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.suggestionCard:hover{
+
+    transform:translateY(-5px);
+
+    border-color:#8B5CF6;
+
+    box-shadow:
+    0 12px 25px rgba(124,58,237,.25);
+}
+
+
+/* ===========================
+        Animation
+=========================== */
+
+@keyframes fadeUp{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(15px);
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+    }
+
+}
+
+.suggestionCard{
+
+    transition:.3s ease;
+
+    cursor:pointer;
+}
+
+.suggestionCard:hover{
+
+    transform:
+        translateY(-8px)
+        scale(1.03);
+
+    background:#1E293B;
+
+    border-color:#8B5CF6;
+
+    box-shadow:
+        0 18px 40px
+        rgba(124,58,237,.30);
+}
+
+/* ===========================
+        Thinking Animation
+=========================== */
+
+.thinkingContainer{
+
+    margin:20px 0;
+
+    padding:20px;
+
+    border-radius:18px;
+
+    background:rgba(255,255,255,.04);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    width:fit-content;
+
+    animation:fadeUp .3s ease;
+}
+
+.thinkingHeader{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    margin-bottom:12px;
+
+    font-weight:600;
+}
+
+.thinkingLogo{
+
+    width:34px;
+
+    height:34px;
+
+    border-radius:10px;
+}
+
+.thinkingText{
+
+    color:#CBD5E1;
+
+    margin-bottom:12px;
+}
+
+.thinkingDots{
+
+    display:flex;
+
+    gap:8px;
+}
+
+.thinkingDots span{
+
+    width:10px;
+
+    height:10px;
+
+    border-radius:50%;
+
+    background:#8B5CF6;
+
+    animation:bounce 1.2s infinite;
+}
+
+.thinkingDots span:nth-child(2){
+
+    animation-delay:.2s;
+}
+
+.thinkingDots span:nth-child(3){
+
+    animation-delay:.4s;
+}
+
+@keyframes bounce{
+
+    0%,80%,100%{
+
+        transform:scale(0.5);
+
+        opacity:.5;
+    }
+
+    40%{
+
+        transform:scale(1);
+
+        opacity:1;
+    }
+}
+
+/* ===========================
+   Mobile Responsive
+=========================== */
+
+@media (max-width: 768px) {
+
+    .chats {
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+
+        padding: 20px 12px;
+        padding-bottom: 170px;
+
+        overflow-x: hidden;
+    }
+
+    /* Welcome */
+
+    .welcome {
+        margin-top: 10px;
+        padding: 0 8px 30px;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .welcomeLogo {
+        width: 58px;
+        height: 58px;
+        margin-bottom: 8px;
+    }
+
+    .welcome h1 {
+        font-size: 38px;
+        line-height: 1.15;
+        margin: 10px 0;
+    }
+
+    .welcome-subtitle {
+        font-size: 14px;
+        line-height: 1.6;
+        margin: 8px 0 22px;
+        max-width: 330px;
+    }
+
+    /* Suggestion Cards */
+
+    .suggestionGrid {
+        width: 100%;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+
+        margin: 0 auto 20px;
+    }
+
+    .suggestionCard {
+        min-height: 105px;
+        width: 100%;
+        box-sizing: border-box;
+
+        border-radius: 16px;
+    }
+
+    .suggestionCard strong {
+        font-size: 14px;
+    }
+
+    /* User messages */
+
+    .userMessage {
+        max-width: 85%;
+        padding: 13px 16px;
+        font-size: 14px;
+        line-height: 1.5;
+    }
+
+    /* AI messages */
+
+    .gptDiv {
+        width: 100%;
+        box-sizing: border-box;
+
+        padding: 16px;
+        margin: 16px 0;
+
+        border-radius: 18px;
+        font-size: 14px;
+    }
+
+    .gptDiv p {
+        line-height: 1.6;
+    }
+
+    /* Code */
+
+    pre {
+        max-width: 100%;
+        box-sizing: border-box;
+        overflow-x: auto;
+    }
+
+    .hljs {
+        padding: 14px !important;
+        font-size: 12px;
+    }
+
+    /* Thinking */
+
+    .thinkingContainer {
+        max-width: 85%;
+        box-sizing: border-box;
+        padding: 16px;
+    }
+
+}
+
+@media (max-width: 400px) {
+
+    .welcome h1 {
+        font-size: 34px;
+    }
+
+    .welcome-subtitle {
+        font-size: 13px;
+    }
+
+    .suggestionGrid {
+        gap: 10px;
+    }
+
+    .suggestionCard {
+        min-height: 95px;
+    }
+
+}

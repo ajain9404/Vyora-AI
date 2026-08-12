@@ -1,0 +1,138 @@
+.resumePage {
+    min-height: 100vh;
+    padding: 50px;
+    background: #0b1020;
+    color: white;
+}
+
+.resumeHeader {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.resumeHeader h1 {
+    font-size: 42px;
+    margin-bottom: 12px;
+}
+
+.resumeHeader p {
+    color: #9ca3af;
+    font-size: 16px;
+}
+
+.resumeUploadCard {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 50px;
+    text-align: center;
+    background: #151b2d;
+    border: 1px solid #292f45;
+    border-radius: 20px;
+}
+
+.uploadIcon {
+    font-size: 55px;
+    margin-bottom: 15px;
+}
+
+.resumeUploadCard h2 {
+    margin-bottom: 10px;
+}
+
+.resumeUploadCard p {
+    color: #9ca3af;
+    margin-bottom: 25px;
+}
+
+.uploadBtn {
+    display: inline-block;
+    padding: 13px 28px;
+    background: linear-gradient(135deg, #7c3aed, #9333ea);
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.uploadBtn:hover {
+    transform: translateY(-2px);
+}
+
+.selectedFile {
+    margin: 25px 0;
+    padding: 15px;
+    background: #1d263b;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    color: #d1d5db;
+}
+
+.analyzeBtn {
+    width: 100%;
+    padding: 14px;
+    border: none;
+    border-radius: 10px;
+    background: linear-gradient(135deg, #8b5cf6, #a855f7);
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.analyzeBtn:hover {
+    opacity: 0.9;
+}
+
+.resumeFeatures {
+    max-width: 1000px;
+    margin: 50px auto 0;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.resumeFeatureCard {
+    padding: 25px;
+    text-align: center;
+    background: #151b2d;
+    border: 1px solid #292f45;
+    border-radius: 16px;
+}
+
+.resumeFeatureCard span {
+    font-size: 30px;
+}
+
+.resumeFeatureCard h3 {
+    margin: 12px 0 8px;
+}
+
+.resumeFeatureCard p {
+    color: #9ca3af;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+
+    .resumePage {
+        padding: 25px;
+    }
+
+    .resumeHeader h1 {
+        font-size: 32px;
+    }
+
+    .resumeUploadCard {
+        padding: 30px 20px;
+    }
+
+    .resumeFeatures {
+        grid-template-columns: 1fr;
+    }
+
+    .selectedFile {
+        flex-direction: column;
+    }
+}
