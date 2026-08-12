@@ -526,3 +526,63 @@ code{
     }
 
 }
+
+/* Markdown tables */
+.gptDiv table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 16px 0;
+
+    display: block;
+    max-width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+
+    white-space: normal;
+}
+
+.gptDiv th,
+.gptDiv td {
+    padding: 10px 14px;
+    text-align: left;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+
+    min-width: 120px;
+}
+
+.gptDiv th {
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.gptDiv td {
+    vertical-align: top;
+}
+
+.gptDiv {
+    max-width: 100%;
+    min-width: 0;
+    overflow-wrap: break-word;
+}
+
+@media (max-width: 768px) {
+
+    .gptDiv {
+        max-width: 100%;
+        overflow-wrap: break-word;
+    }
+
+    .gptDiv table {
+        width: max-content;
+        min-width: 100%;
+        max-width: 100%;
+        overflow-x: auto;
+    }
+
+    .gptDiv th,
+    .gptDiv td {
+        min-width: 120px;
+        padding: 8px 10px;
+        font-size: 13px;
+    }
+}

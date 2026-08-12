@@ -173,104 +173,115 @@ formatted = formatted.replace(/<\/?p>/gi, "");
                 </div>
             )}
 
+<div className="chats">
 
-            <div className="chats">
+    {prevChats?.map((chat, idx) => {
 
-                {/* Previous messages */}
-                {prevChats?.slice(0, -1).map((chat, idx) => (
+        // When a new response is being generated,
+        // don't display the last assistant message from prevChats.
+        const isLastMessage =
+            idx === prevChats.length - 1;
 
-                    <div
-                        key={idx}
-                        className={
-                            chat.role === "user"
-                                ? "userDiv"
-                                : "gptDiv"
-                        }
+        const isGenerating =
+            reply && chat.role === "assistant" && isLastMessage;
+
+        if (isGenerating) {
+            return null;
+        }
+
+        return (
+            <div
+                key={idx}
+                className={
+                    chat.role === "user"
+                        ? "userDiv"
+                        : "gptDiv"
+                }
+            >
+
+                {chat.role === "user" ? (
+
+                    <p className="userMessage">
+                        {chat.content}
+                    </p>
+
+                ) : (
+
+                    <ReactMarkdown
+                        remarkPlugins={[
+                            remarkGfm,
+                            remarkMath
+                        ]}
+                        rehypePlugins={[
+                            rehypeHighlight,
+                            rehypeKatex
+                        ]}
                     >
-
-                        {chat.role === "user" ? (
-
-                            <p className="userMessage">
-                                {chat.content}
-                            </p>
-
-                        ) : (
-
-                            <ReactMarkdown
-                                remarkPlugins={[
-                                    remarkGfm,
-                                    remarkMath
-                                ]}
-                                rehypePlugins={[
-                                    rehypeHighlight,
-                                    rehypeKatex
-                                ]}
-                            >
-                                {formatAIContent(chat.content)}
-                            </ReactMarkdown>
-
-                        )}
-
-                    </div>
-
-                ))}
-
-
-                {/* Currently generating AI response */}
-                {reply && latestReply && (
-
-                    <div className="gptDiv">
-
-                        <ReactMarkdown
-                            remarkPlugins={[
-                                remarkGfm,
-                                remarkMath
-                            ]}
-                            rehypePlugins={[
-                                rehypeHighlight,
-                                rehypeKatex
-                            ]}
-                        >
-                            {formatAIContent(latestReply)}
-                        </ReactMarkdown>
-
-                    </div>
-
-                )}
-
-
-                {/* Thinking indicator */}
-                {loading && (
-
-                    <div className="thinkingContainer">
-
-                        <div className="thinkingHeader">
-
-                            <img
-                                src="/favicon.png"
-                                alt="Vyora AI"
-                                className="thinkingLogo"
-                            />
-
-                            <span>Vyora AI</span>
-
-                        </div>
-
-                        <div className="thinkingText">
-                            Thinking...
-                        </div>
-
-                        <div className="thinkingDots">
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                        </div>
-
-                    </div>
+                        {formatAIContent(chat.content)}
+                    </ReactMarkdown>
 
                 )}
 
             </div>
+        );
+    })}
+
+
+    {/* Currently generating AI response */}
+    {reply && latestReply && (
+
+        <div className="gptDiv">
+
+            <ReactMarkdown
+                remarkPlugins={[
+                    remarkGfm,
+                    remarkMath
+                ]}
+                rehypePlugins={[
+                    rehypeHighlight,
+                    rehypeKatex
+                ]}
+            >
+                {formatAIContent(latestReply)}
+            </ReactMarkdown>
+
+        </div>
+
+    )}
+
+
+    {/* Thinking indicator */}
+    {loading && (
+
+        <div className="thinkingContainer">
+
+            <div className="thinkingHeader">
+
+                <img
+                    src="/favicon.png"
+                    alt="Vyora AI"
+                    className="thinkingLogo"
+                />
+
+                <span>Vyora AI</span>
+
+            </div>
+
+            <div className="thinkingText">
+                Thinking...
+            </div>
+
+            <div className="thinkingDots">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+        </div>
+
+    )}
+
+</div>
         </>
     );
 }
