@@ -10,6 +10,7 @@ function ChatWindow({ sidebarOpen, setSidebarOpen }) {
     const [isOpen, setIsOpen] = useState(false);
     const [errorMessage, setErrorMessage] = useState("");
     const navigate = useNavigate();
+    const API_URL = "https://vyora-ai-backend.onrender.com";
     const getReply = async () => {
 
     if (!prompt.trim() || loading) return;
@@ -36,10 +37,8 @@ function ChatWindow({ sidebarOpen, setSidebarOpen }) {
 
     try {
 
-        const response = await fetch(
-    `${import.meta.env.VITE_API_URL}/api/chat`,
-    options
-);
+        const response = await fetch(`${API_URL}/api/chat`, options); 
+
 
         const res = await response.json();
 

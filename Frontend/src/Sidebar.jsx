@@ -53,8 +53,7 @@ function Sidebar({ sidebarOpen, setSidebarOpen }) {
         try {
             const token = localStorage.getItem("token");
 
-const response = await fetch(
-    `${import.meta.env.VITE_API_URL}/api/thread/${newThreadId}`,
+const response = await fetch(`${API_URL}/api/thread/${newThreadId}`,
     {
         headers: {
             "Authorization": `Bearer ${token}`
@@ -76,7 +75,7 @@ const response = await fetch(
             const token = localStorage.getItem("token");
 
     const response = await fetch(
-    `${import.meta.env.VITE_API_URL}/api/thread/${threadId}`,
+    `${API_URL}/api/thread/${threadId}`,
     {
         method: "DELETE",
         headers: {
