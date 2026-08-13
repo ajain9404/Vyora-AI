@@ -3,6 +3,7 @@ import { useContext, useEffect } from "react";
 import { MyContext } from "./MyContext.jsx";
 import {v1 as uuidv1} from "uuid";
 import { API_URL } from "./config";
+import favicon from "./assets/favicon.png";
 
 function Sidebar({ sidebarOpen, setSidebarOpen }) {
     const {allThreads, setAllThreads, currThreadId, setNewChat, setPrompt, setReply, setCurrThreadId, setPrevChats} = useContext(MyContext);
@@ -111,11 +112,10 @@ const response = await fetch(`${API_URL}/api/thread/${newThreadId}`,
             <div className="brand">
 
                 <img
-                    src="src/assets/favicon.png"
-                    alt="Vyora AI"
-                    className="brandLogo"
-                />
-
+    src={favicon}
+    alt="Vyora AI"
+    className="brandLogo"
+/>
                 <div>
 
                     <h2>Vyora AI</h2>
