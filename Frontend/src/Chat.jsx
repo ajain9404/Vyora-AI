@@ -141,8 +141,8 @@ formatted = formatted.replace(/<\/?p>/gi, "");
                     </h1>
 
                     <p className="welcome-subtitle">
-                         intelligent AI assistant for coding, learning,
-                        writing and everyday productivityYour.
+                         Your intelligent AI assistant for coding, learning,
+                        writing and everyday productivity.
                     </p>
 
                     <div className="suggestionGrid">

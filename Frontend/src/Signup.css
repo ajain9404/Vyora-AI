@@ -1,6 +1,9 @@
 /* ================================
-   LOGIN PAGE
+   SIGNUP PAGE
 ================================ */
+* {
+    box-sizing: border-box;
+}
 
 .loginPage {
     min-height: 100vh;
@@ -13,7 +16,7 @@
 }
 
 /* ================================
-   LOGIN CARD
+   SIGNUP CARD
 ================================ */
 
 .loginCard {
@@ -348,4 +351,20 @@
 .loginBtn:disabled{
     opacity:.8;
     cursor:not-allowed;
+}
+
+@media (max-width: 600px) {
+    .signupContainer,
+    .loginContainer {
+        width: 100%;
+        max-width: 100%;
+        padding: 20px;
+    }
+
+    .inputGroup,
+    .inputGroup input {
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+    }
 }
