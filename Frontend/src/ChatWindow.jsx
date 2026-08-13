@@ -3,6 +3,7 @@ import Chat from "./Chat.jsx";
 import { MyContext } from "./MyContext.jsx";
 import { useContext, useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import { API_URL } from "./config";
 
 function ChatWindow({ sidebarOpen, setSidebarOpen }) {
     const {prompt, setPrompt, reply, setReply, currThreadId, setPrevChats, setNewChat} = useContext(MyContext);
@@ -10,7 +11,6 @@ function ChatWindow({ sidebarOpen, setSidebarOpen }) {
     const [isOpen, setIsOpen] = useState(false);
     const [errorMessage, setErrorMessage] = useState("");
     const navigate = useNavigate();
-    const API_URL = "https://vyora-ai-backend.onrender.com";
     const getReply = async () => {
 
     if (!prompt.trim() || loading) return;

@@ -2,6 +2,7 @@ import "./Sidebar.css";
 import { useContext, useEffect } from "react";
 import { MyContext } from "./MyContext.jsx";
 import {v1 as uuidv1} from "uuid";
+import { API_URL } from "./config";
 
 function Sidebar({ sidebarOpen, setSidebarOpen }) {
     const {allThreads, setAllThreads, currThreadId, setNewChat, setPrompt, setReply, setCurrThreadId, setPrevChats} = useContext(MyContext);
@@ -11,8 +12,7 @@ function Sidebar({ sidebarOpen, setSidebarOpen }) {
 
         const token = localStorage.getItem("token");
 
-        const response = await fetch(
-            `${import.meta.env.VITE_API_URL}/api/thread`,
+       const response = await fetch(`${API_URL}/api/thread`,
             {
                 headers: {
                     "Authorization": `Bearer ${token}`

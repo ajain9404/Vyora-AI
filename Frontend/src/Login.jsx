@@ -7,6 +7,7 @@ import { FcGoogle } from "react-icons/fc";
 import { FaGithub } from "react-icons/fa";
 import { useEffect } from "react";
 import toast from "react-hot-toast";
+import { API_URL } from "./config";
 
 function Login() {
   const [showPassword, setShowPassword] = useState(false);
@@ -14,7 +15,6 @@ function Login() {
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-
   const handleLogin = async () => {
 
     if (!email.trim()) {
@@ -31,8 +31,7 @@ function Login() {
 
     try {
 
-        const response = await fetch(
-            "http://localhost:8080/api/login",
+        const response = await fetch(`${API_URL}/api/login`,
             {
                 method: "POST",
 

@@ -2,7 +2,7 @@ import "./Signup.css";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
-
+import { API_URL } from "./config";
 import { Eye, EyeOff, Mail, Lock, User } from "lucide-react";
 
 function Signup() {
@@ -49,8 +49,7 @@ function Signup() {
 
     try {
 
-        const response = await fetch(
-            "http://localhost:8080/api/signup",
+        const response = await fetch(`${API_URL}/api/signup`,
             {
                 method: "POST",
 
